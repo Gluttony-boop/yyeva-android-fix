@@ -28,16 +28,16 @@ void yyeva::FbRender::initRender() {
     )";
     char FRAGMENT_SHADER[] = R"(#version 310 es
         precision mediump float;
-        uniform sampler2D texture;
+        uniform sampler2D u_Texture;
         in vec2 v_TexCoordinate;
         out vec4 fragColor;
 
         void main () {
-            fragColor = texture(texture, v_TexCoordinate);
+            fragColor = texture(u_Texture, v_TexCoordinate);
         }
     )";
     shaderProgram = ShaderUtil::createProgram(VERTEX_SHADER, FRAGMENT_SHADER);
-    uTextureLocation = glGetUniformLocation(shaderProgram, "texture");
+    uTextureLocation = glGetUniformLocation(shaderProgram, "u_Texture");
     positionLocation = glGetAttribLocation(shaderProgram, "vPosition");
     textureLocation = glGetAttribLocation(shaderProgram, "vTexCoordinate");
 }

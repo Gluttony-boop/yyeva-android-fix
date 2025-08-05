@@ -29,16 +29,16 @@ void yyeva::Mp4Render::initRender() {
     char FRAGMENT_SHADER[] = R"(#version 310 es
         #extension GL_OES_EGL_image_external_essl3 : require
         precision mediump float;
-        uniform samplerExternalOES texture;
+        uniform samplerExternalOES u_Texture;
         in vec2 v_TexCoordinate;
         out vec4 fragColor;
 
         void main () {
-            fragColor = texture(texture, v_TexCoordinate);
+            fragColor = texture(u_Texture, v_TexCoordinate);
         }
     )";
     shaderProgram = ShaderUtil::createProgram(VERTEX_SHADER, FRAGMENT_SHADER);
-    uTextureLocation = glGetUniformLocation(shaderProgram, "texture");
+    uTextureLocation = glGetUniformLocation(shaderProgram, "u_Texture");
     positionLocation = glGetAttribLocation(shaderProgram, "vPosition");
     textureLocation = glGetAttribLocation(shaderProgram, "vTexCoordinate");
 

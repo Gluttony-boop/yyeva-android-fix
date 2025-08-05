@@ -4,7 +4,7 @@
 #include "shaderutil.h"
 
 
-#define LOG_TAG "ShareUtil"
+#define LOG_TAG "SharerUtil"
 #define ELOGE(...) yyeva::ELog::get()->e(LOG_TAG, __VA_ARGS__)
 #define ELOGV(...) yyeva::ELog::get()->i(LOG_TAG, __VA_ARGS__)
 
