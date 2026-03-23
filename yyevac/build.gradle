@@ -62,7 +62,8 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.Gluttony-boop'
                 artifactId = 'yyeva'
-                version = '1.0.0'
+                version = '1.0.2'
+                versionCode 2
             }
             // Creates a Maven publication called “debug”.
             debug(MavenPublication) {
@@ -71,7 +72,8 @@ afterEvaluate {
 
                 groupId = 'com.github.Gluttony-boop'
                 artifactId = 'yyeva-debug'
-                version = '1.0.0'
+                version = '1.0.2'
+                versionCode 2
             }
         }
     }
