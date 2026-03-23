@@ -178,6 +178,11 @@ class EvaDemoActivity : Activity(), IEvaAnimListener {
                 ELog.e(TAG, "${videoInfo.fileName} is not exist")
                 return@Thread
             }
+            // 设置视频倍速播放 (fps=30, speed=2.0 表示2倍速)
+            animView.setVideoFps(30, 5.0f)
+
+            // 设置音频倍速 (需要与视频倍速保持一致)
+            animView.setAudioSpeed(5.0f)
             animView.startPlay(file)
 //            val md5 = FileUtil.getFileMD5(file)
 //            if (videoInfo.md5 == md5) {

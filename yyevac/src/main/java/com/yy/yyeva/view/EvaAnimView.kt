@@ -267,7 +267,9 @@ open class EvaAnimView @JvmOverloads constructor(context: Context, attrs: Attrib
     override fun setVideoFps(fps: Int, speed: Float) {
         ELog.i(TAG, "setVideoFps=$fps， speed=$speed")
         playerEva.isSetFps = true
-        playerEva.defaultFps = (fps * speed).toInt()
+        val targetFps = (fps * speed).toInt()
+        playerEva.defaultFps = targetFps
+        playerEva.fps = targetFps
     }
 
     override fun setNormalMp4(isNormalMp4: Boolean) {

@@ -177,7 +177,10 @@ class EvaAnimConfigManager(var playerEva: EvaAnimPlayer) {
         if (config.fps == 0) {
             config.fps = defaultFps
         }
-        playerEva.fps = config.fps
+        // 只有用户没有手动设置 fps 时才使用配置中的 fps
+        if (!playerEva.isSetFps) {
+            playerEva.fps = config.fps
+        }
         return result
     }
 
@@ -198,7 +201,10 @@ class EvaAnimConfigManager(var playerEva: EvaAnimPlayer) {
             this.defaultVideoMode = playerEva.videoMode
             fps = defaultFps
         }
-        playerEva.fps = config?.fps ?: defaultFps
+        // 只有用户没有手动设置 fps 时才使用配置中的 fps
+        if (!playerEva.isSetFps) {
+            playerEva.fps = config?.fps ?: defaultFps
+        }
     }
 
     /**

@@ -1,2 +1,9 @@
 jdk:
   - openjdk11
+
+before_install:
+  - chmod +x gradlew
+
+install:
+  - ./gradlew :yyevac:assembleRelease
+  - ./gradlew :yyevac:publishToMavenLocal
